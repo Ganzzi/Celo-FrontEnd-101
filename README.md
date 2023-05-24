@@ -8,12 +8,11 @@ Welcome to Celo FrontEnd 101, a web application enable user to view, buy, add, u
 
 # Feature
 1. View list of products in the marketplace
-2. Sort product by creating day
+2. Sort product by creating time
 3. Search for products by name 
 4. Add new products
 5. Buy product
-6. Edit or delete your own product
-
+6. Edit or delete your own prod
 # Tech Stack
 This web aplication uses the following tech stack:
 - [Solidity](https://docs.soliditylang.org/) - A programming language for Ethereum smart contracts.
