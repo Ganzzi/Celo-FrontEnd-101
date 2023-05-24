@@ -1,6 +1,6 @@
 ﻿# Celo-FrontEnd-101
-Live Demo: 
 
+Image demo:
 ![Alt text](./packages/react-app/public/demo.png "Demo")
 
 # Desciption
