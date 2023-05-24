@@ -41,7 +41,10 @@ const Product = ({ id, setError, setLoading, clear, searchQuery }: any) => {
   // Use the useContractCall hook to read the data of the product with the id passed in, from the marketplace contract
   const { data: rawProduct }: any = useContractCall("readProduct", [id], true);
   // Use the useContractSend hook to purchase the product with the id passed in, via the marketplace contract
-  const { writeAsync: purchase } = useContractSend("buyProduct", [Number(id)]);
+  const { writeAsync: purchase, isSuccess: isSuccess } = useContractSend(
+    "buyProduct",
+    [Number(id)]
+  );
 
   // 0x29a2241af62c0000 0x29a2241af62c0000
   const [product, setProduct] = useState<Product | null>(null);
@@ -108,9 +111,12 @@ const Product = ({ id, setError, setLoading, clear, searchQuery }: any) => {
       if (address != product?.owner) {
         await toast.promise(handlePurchase(), {
           pending: "Purchasing product...",
-          success: "Product purchased successfully",
-          error: "Failed to purchase product",
         });
+        if (isSuccess) {
+          toast.success("Product purchased successfully");
+        } else {
+          toast.error("Transfer value exceeded balance of sender");
+        }
       } else {
         toast.error("You cannot buy your own product!");
         setError("You can not buy your own product!");

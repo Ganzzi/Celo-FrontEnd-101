@@ -32,7 +32,7 @@ export const useContractSend = (functionName: string, args: Array<any>) => {
   });
 
   // Write to the smart contract using the prepared config
-  const { data, isSuccess, write, writeAsync, error, isLoading } =
+  const { data, isSuccess, write, writeAsync, error, isLoading, isError } =
     useContractWrite(config);
-  return { data, isSuccess, write, writeAsync, isLoading };
+  return { data, isSuccess, write, writeAsync, isLoading, error, isError };
 };
