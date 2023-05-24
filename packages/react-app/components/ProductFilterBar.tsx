@@ -2,13 +2,16 @@
 import React, { useState } from "react";
 
 // define pprop type for the filtering
-type ProductFilterProps = {
+type ProductFilterBarProps = {
   onSearch: (query: string) => void;
   onSort: (sortOrder: "newest" | "oldest") => void;
 };
 
-// Define the ProductFilter component that take two functions as props to process searching and sorting
-const ProductFilter: React.FC<ProductFilterProps> = ({ onSearch, onSort }) => {
+// Define the ProductFilterBar component that take two functions as props to process searching and sorting
+const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
+  onSearch,
+  onSort,
+}) => {
   // define sort state
   const [sortOrder, setSortOrder] = useState<"oldest" | "newest">("oldest");
 
@@ -50,4 +53,4 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ onSearch, onSort }) => {
   );
 };
 
-export default ProductFilter;
+export default ProductFilterBar;

@@ -10,7 +10,7 @@ import ErrorAlert from "@/components/alerts/ErrorAlert";
 import LoadingAlert from "@/components/alerts/LoadingAlert";
 import SuccessAlert from "@/components/alerts/SuccessAlert";
 import { useAccount } from "wagmi";
-import ProductFilter from "./ProductFilter";
+import ProductFilterBar from "./ProductFilterBar";
 
 // Define the ProductList component
 const ProductList = () => {
@@ -93,7 +93,7 @@ const ProductList = () => {
   return (
     <div className="flex-col">
       {/* Product filtering -- search and sort */}
-      <ProductFilter onSearch={handleSearch} onSort={handleSort} />
+      <ProductFilterBar onSearch={handleSearch} onSort={handleSort} />
 
       {/* If there is an alert, display it */}
       {error && <ErrorAlert message={error} clear={clear} />}
