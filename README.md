@@ -1,6 +1,7 @@
 ﻿# Celo-FrontEnd-101
 
-Image demo:
+live demo: https://celo-front-end-101-react-app.vercel.app
+
 ![Alt text](./packages/react-app/public/demo.png "Demo")
 
 # Desciption
