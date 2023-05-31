@@ -130,8 +130,11 @@ const UpdateDeleteModal: React.FC<UpdateDeleteModalProps> = ({
           </h1>
 
           {/* Close Button */}
-          <button className="bg-red-600 px-2 rounded-xl" onClick={onClose}>
-            <AiOutlineClose size={30} />
+          <button
+            className="border-gray-300 border px-2 rounded-xl"
+            onClick={onClose}
+          >
+            <AiOutlineClose size={24} />
           </button>
         </div>
 
@@ -152,7 +155,7 @@ const UpdateDeleteModal: React.FC<UpdateDeleteModalProps> = ({
             max="100"
             // value={newPrice}
             onChange={(e) => setNewPrice(e.target.value)}
-            className="w-full px-2 py-1 border border-gray-300 rounded"
+            className="w-full px-2 py-1 border border-gray-300 rounded focus-visible:outline-none"
           />
         </div>
 
@@ -160,12 +163,14 @@ const UpdateDeleteModal: React.FC<UpdateDeleteModalProps> = ({
         <div className="flex justify-between">
           <button
             onClick={updateProduct}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
             Update
           </button>
           <button
             onClick={deleteProduct}
-            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          >
             Delete
           </button>
         </div>

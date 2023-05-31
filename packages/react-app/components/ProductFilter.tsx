@@ -12,11 +12,6 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ onSearch, onSort }) => {
   // define sort state
   const [sortOrder, setSortOrder] = useState<"oldest" | "newest">("oldest");
 
-  // function to handle searching
-  const handleSearch = (searchQuery: string) => {
-    onSearch(searchQuery);
-  };
-
   // function to handle sorting
   const handleSort = () => {
     const newSortOrder = sortOrder === "oldest" ? "newest" : "oldest";
@@ -32,16 +27,15 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ onSearch, onSort }) => {
         <input
           type="text"
           placeholder="Search by name"
-          className="p-2 w-72 border border-gray-300 rounded"
-          onChange={(e) => {
-            handleSearch(e.target.value);
-          }}
+          className="p-2 w-72 border border-gray-300 rounded focus-visible:outline-none"
+          onChange={(e) => onSearch(e.target.value)}
         />
 
         {/* select - option to sort (newest or oldest) */}
         <select
           className="p-2 border border-gray-300 rounded"
-          onChange={handleSort}>
+          onChange={handleSort}
+        >
           <option value="asc">Sort (Newest)</option>
           <option value="desc">Sort (Oldest)</option>
         </select>
