@@ -158,7 +158,8 @@ const Product = ({ id, setError, setLoading, clear, searchQuery }: any) => {
           <span
             className={
               "absolute z-10 left-0 mt-4 bg-amber-400 text-black p-1 rounded-r-lg px-4"
-            }>
+            }
+          >
             {product.sold} sold
           </span>
           {/* Show button for updating and deleting */}
@@ -166,16 +167,18 @@ const Product = ({ id, setError, setLoading, clear, searchQuery }: any) => {
             <>
               <span
                 className={
-                  "absolute z-10 -top-6 -right-1 mt-4 bg-green-400 text-black text-xl py-2 rounded-md px-4"
-                }>
+                  "absolute z-10 -top-6 -right-1 mt-4 bg-green-400 text-black text-base py-1.5 rounded-md px-3.5"
+                }
+              >
                 Own by you
               </span>
               <span
                 onClick={() => setModalVisible(!modalVisible)}
                 className={
-                  "absolute z-10 right-0 top-5 mt-4 bg-gray-800 hover:bg-black text-gray-100 py-2 rounded-full px-3"
-                }>
-                <AiFillSetting size={30} />
+                  "absolute cursor-pointer z-10 right-0 top-5 mt-4 bg-gray-800 hover:bg-black text-gray-100 py-1.5 rounded-full px-2.5"
+                }
+              >
+                <AiFillSetting size={24} />
               </span>
             </>
           )}
@@ -196,7 +199,8 @@ const Product = ({ id, setError, setLoading, clear, searchQuery }: any) => {
           {/* Show the address of the product owner as an identicon and link to the address on the Celo Explorer */}
           <Link
             href={`https://explorer.celo.org/alfajores/address/${product.owner}`}
-            className={"absolute -mt-7 ml-6 h-16 w-16 rounded-full"}>
+            className={"absolute -mt-7 ml-6 h-16 w-16 rounded-full"}
+          >
             {identiconTemplate(product.owner)}
           </Link>
         </div>
@@ -223,9 +227,12 @@ const Product = ({ id, setError, setLoading, clear, searchQuery }: any) => {
             {/* Buy button that calls the purchaseProduct function on click */}
             <button
               onClick={purchaseProduct}
-              className="mt-4 h-14 w-full border-[1px] border-gray-500 text-black p-2 rounded-lg hover:bg-black hover:text-white">
+              className="mt-4 h-14 w-full border-[1px] border-gray-500 text-black p-2 rounded-lg hover:bg-black hover:text-white disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
+            >
               {/* Show the product price in cUSD */}
-              Buy for {productPriceFromWei} cUSD
+              {address !== product.owner
+                ? `Buy for ${productPriceFromWei} cUSD`
+                : "You can't buy your product"}
             </button>
           </div>
         </div>

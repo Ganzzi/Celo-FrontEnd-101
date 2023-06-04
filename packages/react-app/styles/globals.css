@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button [data-testid="rk-connect-button"] {
+  background-color: rgb(34 197 94);
+}
