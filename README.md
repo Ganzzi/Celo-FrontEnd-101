@@ -4,7 +4,7 @@ live demo: https://celo-front-end-101-react-app.vercel.app
 
 ![Alt text](./packages/react-app/public/demo.png "Demo")
 
-# Desciption
+# Description
 Welcome to Celo FrontEnd 101, a web application enable user to view, buy, add, update and delete their own product in the marketplace. This project was built as part of a coding challenge and serves as a showcase for my coding abilities. My achievement: https://dacade.org/achievements/53174914-7ab0-4226-928b-00895f390af9
 
 # Feature
